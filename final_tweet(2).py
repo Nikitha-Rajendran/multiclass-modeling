@@ -9,7 +9,6 @@ Original file is located at
 
 !pip install stop_words
 
-# Commented out IPython magic to ensure Python compatibility.
 import pandas as pd
 import numpy as np
 import seaborn as sns
@@ -78,7 +77,7 @@ def remove_stopwords(text):
 
 def get_lemmatized(text):
   """
-    Function that performs lemetization
+    Function that performs lemmatization
   """
   lemmatizer = WordNetLemmatizer()
   text_lem=' '.join([lemmatizer.lemmatize(word) for word in text.split()]) 
@@ -90,11 +89,7 @@ X
 
 X=X.apply(lambda x: remove_stopwords(str(x)))
 
-X
-
 X=X.apply(lambda x: get_lemmatized(str(x)))
-
-X
 
 count=[str(x).split() for x in X]
 words=[len(x) for x in count]
@@ -175,7 +170,7 @@ accr=model.evaluate(test_sequences_matrix,Y_test)
 
 print(f'Test accuracy : {accr[1]:.4f} \nTest loss : {accr[0]:.4f}')
 
-trial="""Get a sneak preview of the 2022 World Cup at this year's"""
+trial="""text."""
 
 trial=clean(trial)
 
